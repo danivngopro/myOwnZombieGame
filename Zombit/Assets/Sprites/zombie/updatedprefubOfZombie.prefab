@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7647916624517071984}
   - component: {fileID: 1377422594734477973}
   m_Layer: 0
-  m_Name: zombie 1
+  m_Name: updatedprefubOfZombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179ecbf035ad966428e602791df196c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1345328126283675473, guid: 87a704017f45c2d4db2aca0ca7ecc6cb, type: 3}
   attackRate: 1
 --- !u!95 &1377422594734477973
 Animator:

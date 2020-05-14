@@ -45,6 +45,29 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        if (rb.position.x < -75 || rb.position.x > 75 || rb.position.y > 75 || rb.position.y < -75)
+        {
+            Debug.Log("cannot exit perimeter");
+            if (rb.position.x < -75)
+            {
+                transform.position = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
+            }
+            else if (rb.position.x > 75)
+            {
+                transform.position = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+            }
+            else if (rb.position.y < -75)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
+            }
+            else if (rb.position.y > 75)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - 5, transform.position.z);
+            }
+        }
+        else
+        {
+            rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        }
     }
 }

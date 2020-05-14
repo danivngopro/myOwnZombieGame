@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class SummonZombies : MonoBehaviour
 {
-    public GameObject zombie;
+    private GameObject zombie;
     // Start is called before the first frame update
     void Start()
     {
+        zombie = GameObject.Find("Zombie");
         StartCoroutine(SummonZ());
     }
 
@@ -22,7 +23,7 @@ public class SummonZombies : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.46f);
             getZombie();
         }
     }
@@ -30,6 +31,8 @@ public class SummonZombies : MonoBehaviour
     void getZombie()
     {
         Vector3 position = new Vector3(Random.Range(-75f, 75f), Random.Range(-75f, 75f), 0);
+        zombie.GetComponent<SpriteRenderer>().enabled = true;
         Instantiate(zombie, position, Quaternion.identity);
+        zombie.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
